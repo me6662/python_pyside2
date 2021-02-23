@@ -1,0 +1,24 @@
+Qt Designer
+
+커스텀 위젯, 다이얼로그, 메인윈도 등을 코드로 작성할 수도 있지만 이것은 매우 지겨운 작업이다
+Qt는 Qt Designer를 통해 시각적을 쉽게 이를 수행할 수 있다. 사용하는 방법은 다음의 절차에 따른다.
+
+<사용법>
+
+1. 시각적으로 위젯을 디자인하여 이를 XML 형식의 .ui 파일로 저장한다.
+2. 이를 pyside2-uic 유틸러티로 .ui 파일을 파이썬 파일로 변환하여 사용된다.
+3. 변환된 파이썬 파일에 정의된 Ui_xxx 형태의 클래스를 이용하여 코드에 반영한다.
+
+
+Qt Designer는 PySide2를 인스톨하면 같이 설치된다. 실행은 커맨드 프람프트에서 다음으로 실행가능하다.
+
+> designer.exe 
+
+로 실행가능
+
+
+** .ui > .py 변경
+pyside2-uic Logon.ui > ui_logon.py >> (VSC) UTF-8 로 재저장
+
+** ui 리소스 > .py 변경
+pyside2-rcc Logon.qrc -o Logon_rc.py 

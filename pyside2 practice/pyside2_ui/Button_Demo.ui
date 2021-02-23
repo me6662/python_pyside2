@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>305</width>
+    <height>167</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Button Demo by YDG</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>281</width>
+     <height>151</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="main_layout" stretch="0,0,0">
+    <property name="spacing">
+     <number>6</number>
+    </property>
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>10</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>10</number>
+    </property>
+    <item>
+     <widget class="QPushButton" name="btn_OK">
+      <property name="text">
+       <string>OK</string>
+      </property>
+      <property name="icon">
+       <iconset resource="D:/python projects/pyside2 practice/Logon.qrc">
+        <normaloff>:/images/ok.png</normaloff>:/images/ok.png</iconset>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QCheckBox" name="cb_case_sense">
+      <property name="text">
+       <string>Case sensitivity</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="gb_sex">
+      <property name="title">
+       <string>Sex</string>
+      </property>
+      <widget class="QWidget" name="verticalLayoutWidget_2">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>19</y>
+         <width>251</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QRadioButton" name="rb_male">
+          <property name="text">
+           <string>Male</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QRadioButton" name="rb_female">
+          <property name="text">
+           <string>Female</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources>
+  <include location="D:/python projects/pyside2 practice/Logon.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>btn_OK</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>btnOk_click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>270</x>
+     <y>37</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>297</x>
+     <y>32</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cb_case_sense</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>cb_case_sense_toggled()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>222</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>77</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>rb_male</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>rb_onMale_toggled()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>128</x>
+     <y>104</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>298</x>
+     <y>130</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>btnOk_click()</slot>
+  <slot>cb_case_sense_toggled()</slot>
+  <slot>rb_onMale_toggled()</slot>
+ </slots>
+</ui>

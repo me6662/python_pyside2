@@ -1,0 +1,20 @@
+Qt에서는 표준다이얼로그(standard dialog) 또는 내장다이얼로그(built-in dialog)라고 
+불리는 흔히 사용되는 몇몇 형식의 다이얼로그를 제공한다. 
+아래 표는 Qt에서 제공하는 표준다이얼로그를 나열한 것으로 모두 QDialog를 상속하여 구현되었다. (이미지 파일 참고)
+
+
+<피드백 다이얼로그>
+표준다이얼로그 중 QInputDialog, QMessageBox, QErrorMessage, QProgressDialog는 사용자에게 간단한 메시지나 정보를 알려주고, 
+그 응답을 받는 역할을 하기 때문에 피드백 다이얼로그(feedback dialog)라고 한다
+
+
+<공용 다이얼로그>
+반면에, QFileDialog, QColorDialog, QFontDialog, QPageSetupDialog, QPrintDialog, QPrintPreviewDialog는 
+시스템 차원에서 지원하는 다이얼로그이기 때문에 공용다이얼로그(common dialog)로 분류된다.
+
+
+<모달 vs 모달리스>
+QErrorMessage와 QProcessDialog만 모덜리스 다이얼로그로 사용되고, 나머지 표준다이얼로그는 모달다이얼로그로 사용되는 특징이 있다.
+
+<프린트 다이얼로그>
+한편, 프린터와 관련된 QPrintDialog, QPageSetupDialog, QPrintPreviewDialog는 Qt Print Support 모듈이고, 나머지는 모두 Qt Widgets 모듈에 속한다.

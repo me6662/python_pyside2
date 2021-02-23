@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FindReplaceDialog</class>
+ <widget class="QDialog" name="FindReplaceDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>406</width>
+    <height>170</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Find/Replace</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="D:/python projects/pyside2 practice/FindReplaceDialog.qrc">
+    <normaloff>:/images/find.png</normaloff>:/images/find.png</iconset>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,1">
+   <property name="spacing">
+    <number>5</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="1">
+        <widget class="QComboBox" name="findComboBox">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Replace with : </string>
+         </property>
+         <property name="buddy">
+          <cstring>replaceComboBox</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QComboBox" name="replaceComboBox">
+         <property name="editable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Find what : </string>
+         </property>
+         <property name="buddy">
+          <cstring>findComboBox</cstring>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Options</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="QCheckBox" name="checkBox">
+          <property name="text">
+           <string>Match whole word</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_2">
+          <property name="text">
+           <string>Match case</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBox_3">
+          <property name="text">
+           <string>Upward</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QPushButton" name="findButton">
+       <property name="text">
+        <string>Find</string>
+       </property>
+       <property name="default">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="replaceButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Replace</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="replaceAllButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Replace All</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="closeButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Close</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="D:/python projects/pyside2 practice/FindReplaceDialog.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>closeButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>344</x>
+     <y>145</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>findComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>enableButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>232</x>
+     <y>25</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>272</x>
+     <y>3</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>replaceComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>enableButtons()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>194</x>
+     <y>59</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>findButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>onFind()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>386</x>
+     <y>20</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>24</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>replaceButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>onReplace()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>374</x>
+     <y>52</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>405</x>
+     <y>64</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>replaceAllButton</sender>
+   <signal>clicked()</signal>
+   <receiver>FindReplaceDialog</receiver>
+   <slot>onRepalceAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>362</x>
+     <y>74</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>400</x>
+     <y>129</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>enableButtons()</slot>
+  <slot>onFind()</slot>
+  <slot>onReplace()</slot>
+  <slot>onRepalceAll()</slot>
+ </slots>
+</ui>

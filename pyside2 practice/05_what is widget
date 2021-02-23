@@ -1,0 +1,33 @@
+위젯
+
+- Qt 프로그램을 만든다 = 위젯을 만들고 조합하는 작업!
+
+- 커스텀위젯 : 사용자가 만드는 위젯
+1. QWidget 컨테이너를 사용하여 다른 위젯을 그 속에 배치해서 만듬 (보통 QWidget 클래스 상속해서 만듬) > Logon2 참고
+2. Qt Designer 를 통해 시각적 폼을 작성하여 쉽게 만들 수 있음
+
+
+Qt 가 제공하는 다양한 위젯
+
+1. 버튼 
+버턴으로는 QPushButton, QToolButton, QCheckBox, QRadioButton 등이 있다. 
+QPushButton이 일반 버턴이고, QCheckBox, QRadioButton은 각각 체크버턴, 라디오버턴이다. 
+QToolButton은 QPushButton과 동일하지만 액션(QAction)과 연결할 수 있는 버턴으로 툴바(QToolBar)에서 주로 사용된다.
+액션은 메뉴, 툴바버턴, 키보드 단축키(shortcuts) 등을 통합해서 지원하기 위해 도입된 개념이다.
+
+2. 입력 위젯
+간단한 입력이 가능한 위젯으로는 QLineEdit, QComboBox, QSlider, QSpinBox 등이 흔히 사용된다. 
+QLineEdit는 한줄짜리 에디터 위젯이고, QComboBox는 드롭다운이 가능한 리스트와 한줄 에디터 위젯이 결합된 위젯이다. 
+여러줄을 편집하는 에디터 위젯으로는 QTextEdit와 QPlainTextEdit가 있습니다.
+QPlainTextEdit는 간단한 서식만 줄수 있는 반면 QTextEdit는 리치텍스트(rich text) 서식을 줄수 있다. 
+
+3. 표시 위젯
+표시 위젯 중에는 QLabel이 가장 흔히 사용된다. 고급 표시 위젯으로 QCalender, QWebView 등이 있다.
+
+4. 컨테이너
+다른 위젯에 대한 컨테이너로 사용되는 QGroupBox, QTabWidget, QStackedWidget, QDockWidget, QSpliter, QScrollArea 등이 있다.
+QTabWidget이나 QStackWidget으로 형태가 변경되는 세련된 다이얼로그를 구성할 수 있다.
+
+5. 아이템뷰 위젯
+아이템을 테이블, 리스트, 트리로 표시하는 위젯으로 QTableWidget, QListWidget, QTreeWidget 등이 있다.
+또한 이들과 같은 기능을 하지만 Qt의 모델-뷰 구조를 지원하는 QTableView, QListView, QTreeView 등이 있다.
